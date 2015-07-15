@@ -2,8 +2,8 @@
 #登陆mysql，负责查询某个表数据总量
 MYSQL=`which mysql`
 count=`$MYSQL -hmysqlhost --default-character-set=utf8   -P3306 -uname -ppwd  <<EOF  
-use db_conform;
-select    count(1)  from $1  ;
+use $1;
+select    count(1)  from $2  ;
 EOF` 
 
 #得到某一个表的总数量
